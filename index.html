@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zdoda Chatbot Survey</title>
+<meta name="description" content="Already using an AI chatbot? Tell us what's not working. A 3-minute survey from Zdoda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="https://www.zdoda.com" aria-label="Zdoda home">
+      <img src="images/zdoda-logo.png" alt="Zdoda" class="logo-img" height="28">
+    </a>
+    <a class="btn" href="#survey">Take the survey</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">3-minute survey for chatbot users</span>
+        <h1>Is your AI chatbot <em>letting your customers down?</em></h1>
+        <p class="lead">We're building a better AI chatbot and voice assistant. Tell us what's not working with yours, and your answers will shape what we build first.</p>
+        <div class="actions">
+          <a class="btn" href="#survey">Share my chatbot problems</a>
+          <span class="note">About 3 minutes · Your answers stay private</span>
+        </div>
+      </div>
+
+      <div class="chat" aria-label="Example of a chatbot giving a poor answer" role="img">
+        <div class="chat-head"><span class="dot" aria-hidden="true"></span>Store assistant <small>Typical bot today</small></div>
+        <div class="chat-body">
+          <div class="msg user">Do you ship to Dubai? I need it by Friday.</div>
+          <div class="msg bot">I'm sorry, I didn't understand that. Please choose an option: Orders, Returns, Other.</div>
+          <div class="msg user">Can I just talk to a person?</div>
+          <div class="msg bot">Our team is available Monday to Friday, 9 am to 5 pm. Is there anything else I can help with?</div>
+          <span class="flag">Customer left. Sale lost.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="problems-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="problems-title">Sound familiar?</h2>
+        <p>These are the chatbot problems businesses tell us about most. If even one fits, we want to hear from you.</p>
+      </div>
+      <ul class="problems">
+        <li><strong>Wrong or made-up answers</strong><span>Confident replies about prices, stock or policies that aren't true.</span></li>
+        <li><strong>Doesn't get what people mean</strong><span>Customers rephrase three times, then give up.</span></li>
+        <li><strong>Can't reach your tools</strong><span>No live order status, bookings or CRM updates.</span></li>
+        <li><strong>No phone or WhatsApp</strong><span>Website only, while your customers call and message.</span></li>
+        <li><strong>Hard to keep up to date</strong><span>Every product or policy change means editing the bot by hand.</span></li>
+        <li><strong>Unpredictable cost</strong><span>Per-message and per-seat charges that grow every month.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="gets-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="gets-title">What you get for 3 minutes</h2>
+      </div>
+      <ul class="gets">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+          <h3>Free early access</h3>
+          <p>Be first to try Zdoda's chatbot and voice assistant when it opens.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h3>A free chatbot review</h3>
+          <p>A 15-minute call where we look at your current bot and suggest quick fixes.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+          <h3>The survey report</h3>
+          <p>The most common chatbot problems we found, and how businesses are fixing them.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band white" id="survey" aria-labelledby="survey-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="survey-title">Tell us about your chatbot</h2>
+        <p>Three short steps. Only a few questions are required, and you can skip the rest.</p>
+      </div>
+      <div class="survey-card" id="survey-card">
+        <!-- Top bar: Step counter + Progress bar -->
+        <div class="survey-top-bar" aria-live="polite">
+          <div class="survey-top-info">
+            <span class="survey-step-badge" id="survey-step-badge">Step 1 of 3 · About your business</span>
+            <span class="survey-step-percent" id="survey-step-percent">33%</span>
+          </div>
+          <div class="survey-progress-track" role="progressbar" id="survey-progress-bar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" aria-label="Survey completion progress">
+            <div class="survey-progress-fill" id="survey-progress-fill" style="width: 33.33%;"></div>
+          </div>
+        </div>
+
+        <form id="zdoda-survey-form" novalidate>
+          <!-- STEP 1 -->
+          <div class="survey-step is-active" id="survey-step-1" data-step="1">
+            <div class="step-header">
+              <h3 class="step-title" id="step-1-heading" tabindex="-1">About your business</h3>
+              <p class="step-desc">Tell us a bit about yourself and your company. Questions marked with <span class="req" aria-hidden="true">*</span> are required.</p>
+            </div>
+
+            <div class="field-grid-2col">
+              <!-- Full name -->
+              <div class="form-group" id="group-fullname">
+                <label for="field-fullname" class="form-label">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="field-fullname" name="Full name" class="form-input" placeholder="e.g. Jane Doe" autocomplete="name" required>
+                <div class="field-error" id="error-fullname" role="alert" hidden>Please enter your full name.</div>
+              </div>
+
+              <!-- Work email -->
+              <div class="form-group" id="group-email">
+                <label for="field-email" class="form-label">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="field-email" name="Work email" class="form-input" placeholder="jane@company.com" autocomplete="email" required>
+                <div class="field-error" id="error-email" role="alert" hidden>Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="field-grid-2col">
+              <!-- Company name -->
+              <div class="form-group" id="group-company">
+                <label for="field-company" class="form-label">Company name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="field-company" name="Company name" class="form-input" placeholder="e.g. Acme Corp" autocomplete="organization" required>
+                <div class="field-error" id="error-company" role="alert" hidden>Please enter your company name.</div>
+              </div>
+
+              <!-- Website -->
+              <div class="form-group" id="group-website">
+                <label for="field-website" class="form-label">Website <span class="optional-tag">(optional)</span></label>
+                <input type="text" id="field-website" name="Website" class="form-input" placeholder="e.g. www.yourstore.com">
+                <span class="field-hint">e.g. www.yourstore.com</span>
+              </div>
+            </div>
+
+            <!-- Industry -->
+            <div class="form-group" id="group-industry">
+              <label class="form-label">Industry <span class="req" aria-hidden="true">*</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-required="true" aria-label="Industry">
+                <div class="chip-item">
+                  <input type="radio" id="ind-ecommerce" name="Industry" value="E-commerce" class="chip-input">
+                  <label for="ind-ecommerce" class="chip">E-commerce</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-healthcare" name="Industry" value="Healthcare / Clinic" class="chip-input">
+                  <label for="ind-healthcare" class="chip">Healthcare / Clinic</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-realestate" name="Industry" value="Real estate" class="chip-input">
+                  <label for="ind-realestate" class="chip">Real estate</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-education" name="Industry" value="Education" class="chip-input">
+                  <label for="ind-education" class="chip">Education</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-restaurant" name="Industry" value="Restaurant / Hospitality" class="chip-input">
+                  <label for="ind-restaurant" class="chip">Restaurant / Hospitality</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-saas" name="Industry" value="SaaS / Tech" class="chip-input">
+                  <label for="ind-saas" class="chip">SaaS / Tech</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-local" name="Industry" value="Local services" class="chip-input">
+                  <label for="ind-local" class="chip">Local services</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-agency" name="Industry" value="Agency" class="chip-input">
+                  <label for="ind-agency" class="chip">Agency</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="ind-other" name="Industry" value="__other_option__" class="chip-input" data-has-other="industry-other-wrap">
+                  <label for="ind-other" class="chip">Other</label>
+                </div>
+              </div>
+              <div class="other-input-wrap" id="industry-other-wrap" hidden>
+                <input type="text" id="industry-other-text" class="form-input other-input" placeholder="Please specify your industry">
+                <div class="field-error" id="error-industry-other" role="alert" hidden>Please specify your industry.</div>
+              </div>
+              <div class="field-error" id="error-industry" role="alert" hidden>Please select your industry.</div>
+            </div>
+
+            <!-- Your role -->
+            <div class="form-group" id="group-role">
+              <label class="form-label">Your role <span class="optional-tag">(optional)</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-label="Your role">
+                <div class="chip-item">
+                  <input type="radio" id="role-founder" name="Your role" value="Founder / Owner" class="chip-input">
+                  <label for="role-founder" class="chip">Founder / Owner</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="role-marketing" name="Your role" value="Marketing" class="chip-input">
+                  <label for="role-marketing" class="chip">Marketing</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="role-support" name="Your role" value="Customer support" class="chip-input">
+                  <label for="role-support" class="chip">Customer support</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="role-operations" name="Your role" value="Operations" class="chip-input">
+                  <label for="role-operations" class="chip">Operations</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="role-developer" name="Your role" value="Developer / IT" class="chip-input">
+                  <label for="role-developer" class="chip">Developer / IT</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="role-other" name="Your role" value="__other_option__" class="chip-input" data-has-other="role-other-wrap">
+                  <label for="role-other" class="chip">Other</label>
+                </div>
+              </div>
+              <div class="other-input-wrap" id="role-other-wrap" hidden>
+                <input type="text" id="role-other-text" class="form-input other-input" placeholder="Please specify your role">
+                <div class="field-error" id="error-role-other" role="alert" hidden>Please specify your role.</div>
+              </div>
+            </div>
+
+            <div class="field-grid-2col">
+              <!-- Country -->
+              <div class="form-group" id="group-country">
+                <label for="field-country" class="form-label">Country <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="field-country" name="Country" class="form-input" placeholder="e.g. United States, India, UK" autocomplete="country-name" required>
+                <div class="field-error" id="error-country" role="alert" hidden>Please enter your country.</div>
+              </div>
+
+              <!-- Team size -->
+              <div class="form-group" id="group-teamsize">
+                <label for="field-teamsize" class="form-label">Team size <span class="optional-tag">(optional)</span></label>
+                <div class="select-wrap">
+                  <select id="field-teamsize" name="Team size" class="form-select">
+                    <option value="">Select team size…</option>
+                    <option value="1–10 people">1–10 people</option>
+                    <option value="11–50 people">11–50 people</option>
+                    <option value="51–200 people">51–200 people</option>
+                    <option value="200+ people">200+ people</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-step-actions">
+              <button type="button" class="btn btn-next" data-step-next="2">
+                <span>Next: Your chatbot today</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="survey-step" id="survey-step-2" data-step="2" hidden>
+            <div class="step-header">
+              <h3 class="step-title" id="step-2-heading" tabindex="-1">Your chatbot today</h3>
+              <p class="step-desc">No wrong answers. Pick the closest option.</p>
+            </div>
+
+            <!-- Which chatbot do you use? -->
+            <div class="form-group" id="group-chatbot">
+              <label class="form-label">Which chatbot do you use? <span class="req" aria-hidden="true">*</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-required="true" aria-label="Which chatbot do you use?">
+                <div class="chip-item">
+                  <input type="radio" id="bot-intercom" name="Which chatbot do you use?" value="Intercom Fin" class="chip-input">
+                  <label for="bot-intercom" class="chip">Intercom Fin</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-tidio" name="Which chatbot do you use?" value="Tidio" class="chip-input">
+                  <label for="bot-tidio" class="chip">Tidio</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-zendesk" name="Which chatbot do you use?" value="Zendesk AI" class="chip-input">
+                  <label for="bot-zendesk" class="chip">Zendesk AI</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-voiceflow" name="Which chatbot do you use?" value="Voiceflow" class="chip-input">
+                  <label for="bot-voiceflow" class="chip">Voiceflow</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-manychat" name="Which chatbot do you use?" value="ManyChat" class="chip-input">
+                  <label for="bot-manychat" class="chip">ManyChat</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-botpress" name="Which chatbot do you use?" value="Botpress" class="chip-input">
+                  <label for="bot-botpress" class="chip">Botpress</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-chatgpt" name="Which chatbot do you use?" value="Custom ChatGPT bot" class="chip-input">
+                  <label for="bot-chatgpt" class="chip">Custom ChatGPT bot</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-inhouse" name="Which chatbot do you use?" value="Built in-house" class="chip-input">
+                  <label for="bot-inhouse" class="chip">Built in-house</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="bot-other" name="Which chatbot do you use?" value="__other_option__" class="chip-input" data-has-other="chatbot-other-wrap">
+                  <label for="bot-other" class="chip">Other</label>
+                </div>
+              </div>
+              <div class="other-input-wrap" id="chatbot-other-wrap" hidden>
+                <input type="text" id="chatbot-other-text" class="form-input other-input" placeholder="Please specify your chatbot">
+                <div class="field-error" id="error-chatbot-other" role="alert" hidden>Please specify which chatbot you use.</div>
+              </div>
+              <div class="field-error" id="error-chatbot" role="alert" hidden>Please select which chatbot you use.</div>
+            </div>
+
+            <!-- How long have you used it? -->
+            <div class="form-group" id="group-duration">
+              <label class="form-label">How long have you used it? <span class="optional-tag">(optional)</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-label="How long have you used it?">
+                <div class="chip-item">
+                  <input type="radio" id="dur-under3" name="How long have you used it?" value="Under 3 months" class="chip-input">
+                  <label for="dur-under3" class="chip">Under 3 months</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="dur-3to12" name="How long have you used it?" value="3–12 months" class="chip-input">
+                  <label for="dur-3to12" class="chip">3–12 months</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="dur-1to2" name="How long have you used it?" value="1–2 years" class="chip-input">
+                  <label for="dur-1to2" class="chip">1–2 years</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="dur-2plus" name="How long have you used it?" value="2+ years" class="chip-input">
+                  <label for="dur-2plus" class="chip">2+ years</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Where does it talk to customers? -->
+            <div class="form-group" id="group-channels">
+              <label class="form-label">Where does it talk to customers? <span class="optional-tag">(optional)</span></label>
+              <span class="field-hint">Pick all that apply</span>
+              <div class="chips-wrap" role="group" aria-label="Where does it talk to customers?">
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-website" name="Where does it talk to customers?" value="Website" class="chip-input">
+                  <label for="chan-website" class="chip">Website</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-whatsapp" name="Where does it talk to customers?" value="WhatsApp" class="chip-input">
+                  <label for="chan-whatsapp" class="chip">WhatsApp</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-social" name="Where does it talk to customers?" value="Instagram / Facebook" class="chip-input">
+                  <label for="chan-social" class="chip">Instagram / Facebook</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-phone" name="Where does it talk to customers?" value="Phone calls" class="chip-input">
+                  <label for="chan-phone" class="chip">Phone calls</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-app" name="Where does it talk to customers?" value="Mobile app" class="chip-input">
+                  <label for="chan-app" class="chip">Mobile app</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="chan-email" name="Where does it talk to customers?" value="Email" class="chip-input">
+                  <label for="chan-email" class="chip">Email</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-grid-2col">
+              <!-- Chats per month -->
+              <div class="form-group" id="group-chatspermonth">
+                <label for="field-chatspermonth" class="form-label">Chats per month <span class="optional-tag">(optional)</span></label>
+                <div class="select-wrap">
+                  <select id="field-chatspermonth" name="Chats per month" class="form-select">
+                    <option value="">Select volume…</option>
+                    <option value="Under 500">Under 500</option>
+                    <option value="500–2,000">500–2,000</option>
+                    <option value="2,000–10,000">2,000–10,000</option>
+                    <option value="10,000+">10,000+</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Monthly spend on your chatbot -->
+              <div class="form-group" id="group-monthlyspend">
+                <label for="field-monthlyspend" class="form-label">Monthly spend on your chatbot <span class="optional-tag">(optional)</span></label>
+                <div class="select-wrap">
+                  <select id="field-monthlyspend" name="Monthly spend on your chatbot" class="form-select">
+                    <option value="">Select monthly spend…</option>
+                    <option value="Under $50">Under $50</option>
+                    <option value="$50–$200">$50–$200</option>
+                    <option value="$200–$500">$200–$500</option>
+                    <option value="$500+">$500+</option>
+                    <option value="Not sure">Not sure</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- How happy are you with it? -->
+            <div class="form-group" id="group-satisfaction">
+              <label class="form-label">How happy are you with it? <span class="req" aria-hidden="true">*</span></label>
+              <div class="scale-container">
+                <div class="scale-chips" role="radiogroup" aria-required="true" aria-label="How happy are you with it? (Scale 1 to 5)">
+                  <div class="scale-item">
+                    <input type="radio" id="scale-1" name="How happy are you with it?" value="1" class="chip-input">
+                    <label for="scale-1" class="scale-btn">1</label>
+                  </div>
+                  <div class="scale-item">
+                    <input type="radio" id="scale-2" name="How happy are you with it?" value="2" class="chip-input">
+                    <label for="scale-2" class="scale-btn">2</label>
+                  </div>
+                  <div class="scale-item">
+                    <input type="radio" id="scale-3" name="How happy are you with it?" value="3" class="chip-input">
+                    <label for="scale-3" class="scale-btn">3</label>
+                  </div>
+                  <div class="scale-item">
+                    <input type="radio" id="scale-4" name="How happy are you with it?" value="4" class="chip-input">
+                    <label for="scale-4" class="scale-btn">4</label>
+                  </div>
+                  <div class="scale-item">
+                    <input type="radio" id="scale-5" name="How happy are you with it?" value="5" class="chip-input">
+                    <label for="scale-5" class="scale-btn">5</label>
+                  </div>
+                </div>
+                <div class="scale-legend">
+                  <span>1 · Very unhappy</span>
+                  <span>5 · Very happy</span>
+                </div>
+              </div>
+              <div class="field-error" id="error-satisfaction" role="alert" hidden>Please rate how happy you are with your chatbot.</div>
+            </div>
+
+            <div class="form-step-actions">
+              <button type="button" class="btn ghost btn-back" data-step-back="1">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" /></svg>
+                <span>Back</span>
+              </button>
+              <button type="button" class="btn btn-next" data-step-next="3">
+                <span>Next: Problems and needs</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="survey-step" id="survey-step-3" data-step="3" hidden>
+            <div class="step-header">
+              <h3 class="step-title" id="step-3-heading" tabindex="-1">Problems and needs</h3>
+              <p class="step-desc">This is the part we read most closely. Be as honest as you like.</p>
+            </div>
+
+            <!-- Which problems do you face? -->
+            <div class="form-group" id="group-problems">
+              <label class="form-label">Which problems do you face? <span class="req" aria-hidden="true">*</span></label>
+              <span class="field-hint">Pick all that apply (at least 1)</span>
+              <div class="chips-grid-2col" role="group" aria-required="true" aria-label="Which problems do you face?">
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-wrong" name="Which problems do you face?" value="Gives wrong or made-up answers" class="chip-input">
+                  <label for="prob-wrong" class="chip">Gives wrong or made-up answers</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-understand" name="Which problems do you face?" value="Doesn't understand what customers mean" class="chip-input">
+                  <label for="prob-understand" class="chip">Doesn't understand what customers mean</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-update" name="Which problems do you face?" value="Hard to update what it knows" class="chip-input">
+                  <label for="prob-update" class="chip">Hard to update what it knows</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-tools" name="Which problems do you face?" value="Can't connect to my tools (CRM, Shopify, calendar)" class="chip-input">
+                  <label for="prob-tools" class="chip">Can't connect to my tools (CRM, Shopify, calendar)</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-handoff" name="Which problems do you face?" value="Poor handoff to a human" class="chip-input">
+                  <label for="prob-handoff" class="chip">Poor handoff to a human</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-voice" name="Which problems do you face?" value="No phone or voice support" class="chip-input">
+                  <label for="prob-voice" class="chip">No phone or voice support</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-lang" name="Which problems do you face?" value="Weak in other languages" class="chip-input">
+                  <label for="prob-lang" class="chip">Weak in other languages</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-price" name="Which problems do you face?" value="Pricing is high or unpredictable" class="chip-input">
+                  <label for="prob-price" class="chip">Pricing is high or unpredictable</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-brand" name="Which problems do you face?" value="Looks generic, can't match my brand" class="chip-input">
+                  <label for="prob-brand" class="chip">Looks generic, can't match my brand</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-replies" name="Which problems do you face?" value="Slow replies" class="chip-input">
+                  <label for="prob-replies" class="chip">Slow replies</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-leads" name="Which problems do you face?" value="Doesn't capture leads or book appointments" class="chip-input">
+                  <label for="prob-leads" class="chip">Doesn't capture leads or book appointments</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="checkbox" id="prob-dev" name="Which problems do you face?" value="Needs a developer to set up or change" class="chip-input">
+                  <label for="prob-dev" class="chip">Needs a developer to set up or change</label>
+                </div>
+                <div class="grid-chip-item grid-chip-span">
+                  <input type="checkbox" id="prob-other" name="Which problems do you face?" value="__other_option__" class="chip-input" data-has-other="problems-other-wrap">
+                  <label for="prob-other" class="chip">Other problem…</label>
+                </div>
+              </div>
+              <div class="other-input-wrap" id="problems-other-wrap" hidden>
+                <input type="text" id="problems-other-text" class="form-input other-input" placeholder="Please describe the other problem">
+                <div class="field-error" id="error-problems-other" role="alert" hidden>Please describe the other problem.</div>
+              </div>
+              <div class="field-error" id="error-problems" role="alert" hidden>Please select at least one problem you face.</div>
+            </div>
+
+            <!-- Which ONE problem hurts your business most? -->
+            <div class="form-group" id="group-mainproblem">
+              <label class="form-label">Which ONE problem hurts your business most? <span class="req" aria-hidden="true">*</span></label>
+              <div class="chips-grid-2col" role="radiogroup" aria-required="true" aria-label="Which ONE problem hurts your business most?">
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-wrong" name="Which ONE problem hurts your business most?" value="Gives wrong or made-up answers" class="chip-input">
+                  <label for="mainprob-wrong" class="chip">Gives wrong or made-up answers</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-understand" name="Which ONE problem hurts your business most?" value="Doesn't understand what customers mean" class="chip-input">
+                  <label for="mainprob-understand" class="chip">Doesn't understand what customers mean</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-update" name="Which ONE problem hurts your business most?" value="Hard to update what it knows" class="chip-input">
+                  <label for="mainprob-update" class="chip">Hard to update what it knows</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-tools" name="Which ONE problem hurts your business most?" value="Can't connect to my tools (CRM, Shopify, calendar)" class="chip-input">
+                  <label for="mainprob-tools" class="chip">Can't connect to my tools (CRM, Shopify, calendar)</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-handoff" name="Which ONE problem hurts your business most?" value="Poor handoff to a human" class="chip-input">
+                  <label for="mainprob-handoff" class="chip">Poor handoff to a human</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-voice" name="Which ONE problem hurts your business most?" value="No phone or voice support" class="chip-input">
+                  <label for="mainprob-voice" class="chip">No phone or voice support</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-lang" name="Which ONE problem hurts your business most?" value="Weak in other languages" class="chip-input">
+                  <label for="mainprob-lang" class="chip">Weak in other languages</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-price" name="Which ONE problem hurts your business most?" value="Pricing is high or unpredictable" class="chip-input">
+                  <label for="mainprob-price" class="chip">Pricing is high or unpredictable</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-brand" name="Which ONE problem hurts your business most?" value="Looks generic, can't match my brand" class="chip-input">
+                  <label for="mainprob-brand" class="chip">Looks generic, can't match my brand</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-replies" name="Which ONE problem hurts your business most?" value="Slow replies" class="chip-input">
+                  <label for="mainprob-replies" class="chip">Slow replies</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-leads" name="Which ONE problem hurts your business most?" value="Doesn't capture leads or book appointments" class="chip-input">
+                  <label for="mainprob-leads" class="chip">Doesn't capture leads or book appointments</label>
+                </div>
+                <div class="grid-chip-item">
+                  <input type="radio" id="mainprob-dev" name="Which ONE problem hurts your business most?" value="Needs a developer to set up or change" class="chip-input">
+                  <label for="mainprob-dev" class="chip">Needs a developer to set up or change</label>
+                </div>
+                <div class="grid-chip-item grid-chip-span">
+                  <input type="radio" id="mainprob-other" name="Which ONE problem hurts your business most?" value="__other_option__" class="chip-input" data-has-other="mainproblem-other-wrap">
+                  <label for="mainprob-other" class="chip">Other problem…</label>
+                </div>
+              </div>
+              <div class="other-input-wrap" id="mainproblem-other-wrap" hidden>
+                <input type="text" id="mainproblem-other-text" class="form-input other-input" placeholder="Please describe the biggest problem">
+                <div class="field-error" id="error-mainproblem-other" role="alert" hidden>Please describe the problem that hurts your business most.</div>
+              </div>
+              <div class="field-error" id="error-mainproblem" role="alert" hidden>Please choose which one problem hurts your business most.</div>
+            </div>
+
+            <!-- Tell us about a time it let you or a customer down -->
+            <div class="form-group" id="group-story">
+              <label for="field-story" class="form-label">Tell us about a time it let you or a customer down <span class="optional-tag">(optional)</span></label>
+              <span class="field-hint">e.g. A customer asked about our return policy and the bot gave the wrong answer, so we lost the sale.</span>
+              <textarea id="field-story" name="Tell us about a time it let you or a customer down" class="form-textarea" rows="4" maxlength="1000" placeholder="Type your story here…"></textarea>
+              <div class="char-counter" id="story-char-counter"><span id="story-char-count">0</span> / 1000 characters</div>
+            </div>
+
+            <!-- What do you wish your chatbot could do? -->
+            <div class="form-group" id="group-wishes">
+              <label class="form-label">What do you wish your chatbot could do? <span class="optional-tag">(optional)</span></label>
+              <span class="field-hint">Pick all that apply</span>
+              <div class="chips-wrap" role="group" aria-label="What do you wish your chatbot could do?">
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-phone" name="What do you wish your chatbot could do?" value="Answer phone calls" class="chip-input">
+                  <label for="wish-phone" class="chip">Answer phone calls</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-whatsapp" name="What do you wish your chatbot could do?" value="Reply on WhatsApp" class="chip-input">
+                  <label for="wish-whatsapp" class="chip">Reply on WhatsApp</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-learn" name="What do you wish your chatbot could do?" value="Learn from my website automatically" class="chip-input">
+                  <label for="wish-learn" class="chip">Learn from my website automatically</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-book" name="What do you wish your chatbot could do?" value="Book appointments" class="chip-input">
+                  <label for="wish-book" class="chip">Book appointments</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-orders" name="What do you wish your chatbot could do?" value="Track orders" class="chip-input">
+                  <label for="wish-orders" class="chip">Track orders</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-human" name="What do you wish your chatbot could do?" value="Hand off to a human" class="chip-input">
+                  <label for="wish-human" class="chip">Hand off to a human</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-langs" name="What do you wish your chatbot could do?" value="Speak many languages" class="chip-input">
+                  <label for="wish-langs" class="chip">Speak many languages</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-brand" name="What do you wish your chatbot could do?" value="Match my brand design" class="chip-input">
+                  <label for="wish-brand" class="chip">Match my brand design</label>
+                </div>
+                <div class="chip-item">
+                  <input type="checkbox" id="wish-reports" name="What do you wish your chatbot could do?" value="Lead and chat reports" class="chip-input">
+                  <label for="wish-reports" class="chip">Lead and chat reports</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- If a tool fixed your biggest problem, would you switch? -->
+            <div class="form-group" id="group-switch">
+              <label class="form-label">If a tool fixed your biggest problem, would you switch? <span class="optional-tag">(optional)</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-label="If a tool fixed your biggest problem, would you switch?">
+                <div class="chip-item">
+                  <input type="radio" id="switch-month" name="If a tool fixed your biggest problem, would you switch?" value="Yes, within a month" class="chip-input">
+                  <label for="switch-month" class="chip">Yes, within a month</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="switch-price" name="If a tool fixed your biggest problem, would you switch?" value="Yes, if the price is right" class="chip-input">
+                  <label for="switch-price" class="chip">Yes, if the price is right</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="switch-later" name="If a tool fixed your biggest problem, would you switch?" value="Maybe later" class="chip-input">
+                  <label for="switch-later" class="chip">Maybe later</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="switch-no" name="If a tool fixed your biggest problem, would you switch?" value="No" class="chip-input">
+                  <label for="switch-no" class="chip">No</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Can we follow up with you? -->
+            <div class="form-group" id="group-followup">
+              <label class="form-label">Can we follow up with you? <span class="optional-tag">(optional)</span></label>
+              <div class="chips-wrap" role="radiogroup" aria-label="Can we follow up with you?">
+                <div class="chip-item">
+                  <input type="radio" id="follow-call" name="Can we follow up with you?" value="Yes, book a free 15-minute call" class="chip-input">
+                  <label for="follow-call" class="chip">Yes, book a free 15-minute call</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="follow-access" name="Can we follow up with you?" value="Just give me free early access" class="chip-input">
+                  <label for="follow-access" class="chip">Just give me free early access</label>
+                </div>
+                <div class="chip-item">
+                  <input type="radio" id="follow-no" name="Can we follow up with you?" value="No, thanks" class="chip-input">
+                  <label for="follow-no" class="chip">No, thanks</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consent -->
+            <div class="form-group consent-group" id="group-consent">
+              <label class="checkbox-container">
+                <input type="checkbox" id="field-consent" name="Consent" value="I agree that Zdoda can store my answers and contact me about this survey." class="custom-checkbox-input" required>
+                <span class="custom-checkbox-box" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 5.5"></polyline></svg>
+                </span>
+                <span class="checkbox-label-text">
+                  I agree that Zdoda can store my answers and contact me about this survey. <span class="req" aria-hidden="true">*</span>
+                </span>
+              </label>
+              <div class="field-error" id="error-consent" role="alert" hidden>Please agree to the consent statement to continue.</div>
+            </div>
+
+            <!-- Submit error message -->
+            <div class="survey-submit-error" id="survey-submit-error" role="alert" hidden>
+              We couldn't send your answers. Please check your internet connection and try again.
+            </div>
+
+            <div class="form-step-actions">
+              <button type="button" class="btn ghost btn-back" data-step-back="2">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" /></svg>
+                <span>Back</span>
+              </button>
+              <button type="submit" class="btn btn-submit" id="survey-submit-btn">
+                <span>Send my answers</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.114A28.897 28.897 0 003.105 2.289z" /></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Fixed Toast Notification -->
+<div id="survey-toast" class="survey-toast" role="status" aria-live="polite" hidden>
+  <svg class="toast-icon" viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
+    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+  </svg>
+  <span>Thanks! Your answers were sent.</span>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b>Zdoda</b> · AI chatbots and voice assistants · <a href="https://www.zdoda.com" target="_blank" rel="noopener">zdoda.com</a></div>
+    <div class="contact">
+      <span>Email: <b>zdoda.ai@gmail.com</b></span>
+      <span>Phone: <b>+91 88388 87303</b></span>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/form-map.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
